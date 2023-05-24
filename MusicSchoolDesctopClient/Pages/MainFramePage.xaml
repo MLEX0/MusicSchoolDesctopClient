@@ -1,0 +1,250 @@
+﻿<Page x:Class="MusicSchoolDesctopClient.Pages.MainFramePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MusicSchoolDesctopClient.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="1000"
+      Title="Главное окно">
+    <Page.Resources>
+        <Style x:Key="ButtoAnim" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"></Setter>
+            <Setter Property="Background" Value="#13293D"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0"
+                                BorderBrush="#13293D" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                        </Border>
+
+                        <ControlTemplate.Triggers >
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#16232E"
+                                                        Duration="0:0:0.020"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="PreviewMouseUp">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#13293D" Duration="0:0:0.020"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#16232E" 
+                                                        Duration="0:0:0.020"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#13293D" 
+                                                        Duration="0:0:0.020"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+
+    <!--Верхний правый колотитул-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100">
+
+            </ColumnDefinition>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Frame x:Name="NavigationFrame" Grid.Row="1"/>
+        </Grid>
+
+
+
+
+
+        <!--Левый стобик-->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0"/>
+                <RowDefinition/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <Border  Grid.RowSpan="3" 
+                     Background="#13293D"/>
+
+            <StackPanel Grid.Row="1">
+
+                <Button  Click="ButtonProfile_Click" 
+                         x:Name="BottonProfile" 
+                         Style="{StaticResource ButtoAnim}" 
+                         Visibility="Visible"  
+                         Height="100"
+                         Width="100">
+
+                    <Grid>
+
+                        <Border Width="100" 
+                                Height="100" 
+                                Background="#7899D4" 
+                                Opacity="1.00"
+                                x:Name="BtnBorderProfile" 
+                                Visibility="Hidden"/>
+
+
+                        <StackPanel VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center" 
+                                    Orientation="Horizontal">
+                            <Image Margin="0 0 0 0" 
+                                   Source="/Image/navigation_profile_icon.png" 
+                                   Width="80" 
+                                   Height="80"/>
+
+
+                        </StackPanel>
+
+
+                    </Grid>
+
+                </Button>
+
+                <Button  
+                    Click="ButtonSchedule_Click" 
+                    x:Name="ButtonSchedule" 
+                    Style="{StaticResource ButtoAnim}" 
+                    Visibility="Visible"  
+                    Height="100">
+
+                    <Grid>
+                        <Border Width="100" 
+                                Height="100" 
+                                Background="#7899D4" 
+                                Opacity="1.00"
+                                x:Name="BtnBorderSchedule" 
+                                Visibility="Hidden"/>
+
+                        <StackPanel VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center" 
+                                    Orientation="Horizontal">
+
+                            <Image Margin="0 0 0 0" 
+                                   Source="/Image/navigation_schedule_icon.png" 
+                                   Width="80" 
+                                   Height="80"/>
+
+
+                        </StackPanel>
+                    </Grid>
+
+                </Button>
+
+                <Button  Style="{StaticResource ButtoAnim}" 
+                         Visibility="Visible"  
+                         Height="100" 
+                         x:Name="ButtonMarks" 
+                         Click="ButtonMarks_Click">
+
+                    <Grid>
+
+                        <Border Width="100" 
+                                Height="100" 
+                                Background="#7899D4" 
+                                Opacity="1.00"
+                                x:Name="BtnBorderMarks" 
+                                Visibility="Hidden"/>
+
+                        <StackPanel VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center" 
+                                    Orientation="Horizontal">
+
+                            <Image Margin="0 0 0 0" 
+                                   Source="/Image/navigation_marks_icon.png" 
+                                   Width="80" 
+                                   Height="80"/>
+
+
+                        </StackPanel>
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource ButtoAnim}" 
+                        Visibility="Visible"  
+                        Height="100" 
+                        x:Name="AdminButton" 
+                        Click="ButtonAdmin_Click">
+
+                    <Grid>
+
+                        <Border Width="360" 
+                                Height="130" 
+                                Background="#7899D4" 
+                                Opacity="1.00"
+                                x:Name="BtnBorderAdmin" 
+                                Visibility="Hidden"/>
+
+                        <StackPanel VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center" 
+                                    Orientation="Horizontal">
+
+                            <Image Margin="0 0 0 0" 
+                                   Source="/Image/navigation_admin_icon.png" 
+                                   Width="80" 
+                                   Height="80"/>
+
+                        </StackPanel>
+                       
+                    </Grid>
+                </Button>
+
+
+
+            </StackPanel>
+            <Button VerticalAlignment="Bottom" 
+                    Grid.Row="2" 
+                    Style="{StaticResource ButtoAnim}" 
+                    Visibility="Visible" 
+                    Height="100" 
+                    x:Name="BtnExit" 
+                    Click="BtnExit_Click">
+
+                <Grid>
+                    <Image Margin="0 0 0 0" 
+                                   Source="/Image/navigation_LogOut_icon.png" 
+                                   Width="70" 
+                                   Height="70"/>
+                </Grid>
+
+            </Button>
+            
+        </Grid>
+
+    </Grid>
+
+</Page>
+
