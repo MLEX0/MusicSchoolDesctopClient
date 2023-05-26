@@ -1,5 +1,4 @@
-﻿using MusicSchoolDesctopClient.Class;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MusicSchoolDesctopClient.Pages
+namespace MusicSchoolDesctopClient.Elements
 {
     /// <summary>
-    /// Логика взаимодействия для AddEditUserPage.xaml
+    /// Логика взаимодействия для Schedule.xaml
     /// </summary>
-    public partial class AddEditUserPage : Page
+    public partial class Schedule : UserControl
     {
-        public AddEditUserPage()
+        public Schedule()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            PageController.MainFrame.Content = new Pages.ViewUsersPage();
         }
     }
 }

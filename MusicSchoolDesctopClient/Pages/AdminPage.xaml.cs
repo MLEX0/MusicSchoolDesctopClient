@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicSchoolDesctopClient.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,20 @@ namespace MusicSchoolDesctopClient.Pages
         {
             InitializeComponent();
         }
+
+
+        private void ButtonChangeSchedule_Click(object sender, RoutedEventArgs e)
+        {
+
+            PageController.MainFrame.Content = new Pages.ProfileChangeLessonPage();
+        }
+
+        private void ButtonChangeUser_Click(object sender, RoutedEventArgs e)
+        {
+
+            PageController.MainFrame.Content = new Pages.ViewUsersPage();
+        }
+
+       
     }
 }

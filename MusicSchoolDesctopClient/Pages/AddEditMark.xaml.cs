@@ -17,18 +17,18 @@ using System.Windows.Shapes;
 namespace MusicSchoolDesctopClient.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AddEditUserPage.xaml
+    /// Логика взаимодействия для AddEditMark.xaml
     /// </summary>
-    public partial class AddEditUserPage : Page
+    public partial class AddEditMark : Page
     {
-        public AddEditUserPage()
+        public AddEditMark()
         {
             InitializeComponent();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            PageController.MainFrame.Content = new Pages.ViewUsersPage();
+            PageController.MainFrame.Content = new Pages.MarksViewPage();
         }
     }
 }

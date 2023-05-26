@@ -5,10 +5,239 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MusicSchoolDesctopClient.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="AdminPage">
+      d:DesignHeight="550" d:DesignWidth="1000"
+      Title="Меню администратора">
+    <Page.Resources>
+        <Style x:Key="TextBoxStyle" TargetType="TextBox" >
+
+            <Setter Property="Foreground"  Value="#FFFFFF"></Setter>
+            <Setter Property="BorderBrush"  Value="#061828"></Setter>
+            <Setter Property="Background" Value="#62829E"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10,0,0,0"></Setter>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Template">
+
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+
+                        <Grid x:Name="root" 
+                              Width="200" 
+                              Height="25" 
+                              SnapsToDevicePixels="True">
+
+                            <Border x:Name="Backgroundd" 
+                                    BorderThickness="3" 
+                                    CornerRadius="10" 
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"/>
+
+                            <ScrollViewer x:Name="PART_ContentHost" 
+                                          BorderThickness="0" 
+                                          IsTabStop="False"
+                                          Background="{x:Null}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"
+                                          Padding="{TemplateBinding Padding}"/>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" 
+                                     Value="True">
+
+                                <Setter Property="BorderBrush" 
+                                        Value="#3D3108"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtoEntry" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"></Setter>
+            <Setter Property="Foreground"  Value="#5A53A0"></Setter>
+            <Setter Property="BorderBrush"  Value="#061828"></Setter>
+            <Setter Property="Background" Value="#62829E"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                                BorderThickness="5"
+                                BorderBrush="#061828" 
+                                CornerRadius="10" 
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#FF080B4B" 
+                                                        Duration="0:0:0.020"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="PreviewMouseUp">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#FF080B1B" 
+                                                        Duration="0:0:0.020"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" 
+                                                        To="#FF1F246E" 
+                                                        Duration="0:0:0.020"/>
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#FF080B3B" 
+                                                        Duration="0:0:0.020"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" 
+                                                        To="#FF1F243E" 
+                                                        Duration="0:0:0.020"/>
+
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#FF131D54" 
+                                                        Duration="0:0:0.020"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <Style x:Key="PasswordStyle" 
+               TargetType="PasswordBox">
+
+            <Setter Property="Foreground"  Value="#FFFFFF"></Setter>
+            <Setter Property="BorderBrush"  Value="#061828"></Setter>
+            <Setter Property="Background" Value="#62829E"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10,0,0,0"></Setter>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Template">
+
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Grid x:Name="root" 
+                              Width="200" 
+                              Height="25" 
+                              SnapsToDevicePixels="True">
+
+                            <Border x:Name="Backgroundd" 
+                                    BorderThickness="3" 
+                                    CornerRadius="10" 
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"/>
+
+                            <ScrollViewer x:Name="PART_ContentHost" 
+                                          BorderThickness="0" 
+                                          IsTabStop="False"
+                                          Background="{x:Null}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"
+                                          Padding="{TemplateBinding Padding}"></ScrollViewer>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" 
+                                     Value="True" >
+                                <Setter Property="BorderBrush" 
+                                        Value="#3D3108"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="450"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border CornerRadius="50" 
+                Grid.Column="1" 
+                Grid.Row="1" 
+                Background="#4C779E">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock HorizontalAlignment="Center" 
+                           VerticalAlignment="Center" 
+                           Text="Меню администратора" 
+                           Foreground="White" 
+                           FontSize="25"/>
+
+
+                <StackPanel VerticalAlignment="Center" 
+                            HorizontalAlignment="Center" 
+                            Grid.Row="1">
+
+                    <Button Style="{StaticResource ButtoEntry}"  
+                            Click="ButtonChangeSchedule_Click" 
+                            x:Name="ButtonChangeSchedule" 
+                            Width="200" 
+                            Height="40">
+
+                        <TextBlock Margin="0 0 0 0"
+                                   FontSize="15" 
+                                   Foreground="#FFFFFF"
+                                   Text="Изменить расписание"/>
+
+                    </Button>
+
+
+                    <Button Style="{StaticResource ButtoEntry}"  
+                            Click="ButtonChangeUser_Click" 
+                            x:Name="ButtonChangUser"
+                            Margin="0 20 0 0"
+                            Width="200" 
+                            Height="40">
+
+                        <TextBlock Margin="0 0 0 0"
+                                   FontSize="15" 
+                                   Foreground="#FFFFFF"
+                                   Text="Изменить пользователей"/>
+
+                    </Button>
+
+                </StackPanel>
+
+
+            </Grid>
+
+        </Border>
     </Grid>
 </Page>

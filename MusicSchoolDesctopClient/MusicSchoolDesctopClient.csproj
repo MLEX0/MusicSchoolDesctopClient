@@ -55,7 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Elements\Schedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddEditLesson.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditMark.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -76,6 +84,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MarksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MarksViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProfileChangeLessonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProfileChangeUsersPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -103,8 +123,14 @@
     <Compile Include="Class\AppData.cs" />
     <Compile Include="Class\PageController.cs" />
     <Compile Include="Class\TempData.cs" />
+    <Compile Include="Elements\Schedule.xaml.cs">
+      <DependentUpon>Schedule.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddEditLesson.xaml.cs">
       <DependentUpon>AddEditLesson.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditMark.xaml.cs">
+      <DependentUpon>AddEditMark.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddEditUserPage.xaml.cs">
       <DependentUpon>AddEditUserPage.xaml</DependentUpon>
@@ -120,6 +146,15 @@
     </Compile>
     <Compile Include="Pages\MarksPage.xaml.cs">
       <DependentUpon>MarksPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MarksViewPage.xaml.cs">
+      <DependentUpon>MarksViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProfileChangeLessonPage.xaml.cs">
+      <DependentUpon>ProfileChangeLessonPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProfileChangeUsersPage.xaml.cs">
+      <DependentUpon>ProfileChangeUsersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProfilePage.xaml.cs">
       <DependentUpon>ProfilePage.xaml</DependentUpon>
@@ -170,6 +205,15 @@
     <Resource Include="Image\navigation_marks_icon.png" />
     <Resource Include="Image\navigation_profile_icon.png" />
     <Resource Include="Image\navigation_schedule_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\24052023-114508_711-Eugeneguth.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\backpng.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

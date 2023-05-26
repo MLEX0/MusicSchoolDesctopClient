@@ -6,9 +6,152 @@
       xmlns:local="clr-namespace:MusicSchoolDesctopClient.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="1000"
-      Title="MarksPage">
+      Title="Страница Оценок">
+    <Page.Resources>
+        <Style x:Key="ButtoEntry" TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True"></Setter>
+        <Setter Property="Foreground"  Value="#5A53A0"></Setter>
+        <Setter Property="BorderBrush"  Value="#061828"></Setter>
+        <Setter Property="Background" Value="#62829E"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
 
+                        <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="PreviewMouseDown">
+                            <BeginStoryboard>
+                                <Storyboard>
+
+                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#FF080B4B" 
+                                                        Duration="0:0:0.020"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="PreviewMouseUp">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#FF080B1B" 
+                                                        Duration="0:0:0.020"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" 
+                                                        To="#FF1F246E" 
+                                                        Duration="0:0:0.020"/>
+                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#FF080B3B" 
+                                                        Duration="0:0:0.020"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" 
+                                                        To="#FF1F243E" 
+                                                        Duration="0:0:0.020"/>
+
+                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#FF131D54" 
+                                                        Duration="0:0:0.020"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    </Page.Resources>
     <Grid>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="0"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="Welcome" 
+                           FontFamily="Butler Bold"
+                           Margin="0 0 0 0" 
+                           FontSize="34" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="Добавление оценки" 
+                           Foreground="White"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="3"
+                           Grid.Row="0"/>
         
+        <ListView 
+             x:Name="lvGroupLessons"
+                  Background="#7899D4"
+                  Grid.Column="1"
+                  Grid.Row="1"
+                  MouseDoubleClick="lvGroupLessons_MouseDoubleClick"
+                  VerticalContentAlignment="Center"
+                  d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="lvGroupLessons_SelectionChanged" 
+                  >
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <Grid Height="150" Width="700" HorizontalAlignment="Center">
+                        <Border 
+                    Background="#13293D"  
+                    CornerRadius="10"
+                    Margin="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+
+                                <TextBlock Grid.Row="0" 
+                               Grid.ColumnSpan="2"
+                           Text="{Binding SubjectName}"
+                           Foreground="White"
+                           FontSize="35" 
+                           FontWeight="Bold" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="5" />
+
+                                <TextBlock Grid.Row="1" 
+                           Foreground="White"
+                           Text="{Binding GroupNumber}" 
+                           FontSize="30" 
+                           FontWeight="Bold" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Left"
+                           Margin="5" />
+
+                                <TextBlock Grid.Column="1" 
+                               Grid.Row="1"
+                           Text="{Binding LessonDate}" 
+                           FontSize="30" 
+                           FontWeight="Bold" 
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Margin="2" />
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+       
     </Grid>
 </Page>

@@ -7,8 +7,333 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddEditLesson">
+    <Page.Resources>
+        <Style x:Key="TextBoxStyle" TargetType="TextBox" >
 
+            <Setter Property="Foreground"  Value="#FFFFFF"></Setter>
+            <Setter Property="BorderBrush"  Value="#061828"></Setter>
+            <Setter Property="Background" Value="#62829E"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10,0,0,0"></Setter>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Template">
+
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+
+                        <Grid x:Name="root" 
+                             
+                              SnapsToDevicePixels="True">
+
+                            <Border x:Name="Backgroundd" 
+                                    BorderThickness="3" 
+                                    CornerRadius="10" 
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"/>
+
+                            <ScrollViewer x:Name="PART_ContentHost" 
+                                          BorderThickness="0" 
+                                          IsTabStop="False"
+                                          Background="{x:Null}"
+                                          TextElement.Foreground="{TemplateBinding Foreground}"
+                                          Padding="{TemplateBinding Padding}"/>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" 
+                                     Value="True">
+
+                                <Setter Property="BorderBrush" 
+                                        Value="#3D3108"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtoEntry" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"></Setter>
+            <Setter Property="Foreground"  Value="#5A53A0"></Setter>
+            <Setter Property="BorderBrush"  Value="#061828"></Setter>
+            <Setter Property="Background" Value="#62829E"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                                BorderThickness="5"
+                                BorderBrush="#061828" 
+                                CornerRadius="10" 
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
+
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#FF080B4B" 
+                                                        Duration="0:0:0.020"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="PreviewMouseUp">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#FF080B1B" 
+                                                        Duration="0:0:0.020"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" 
+                                                        To="#FF1F246E" 
+                                                        Duration="0:0:0.020"/>
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#FF080B3B" 
+                                                        Duration="0:0:0.020"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" 
+                                                        To="#FF1F243E" 
+                                                        Duration="0:0:0.020"/>
+
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#FF131D54" 
+                                                        Duration="0:0:0.020"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="350"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0"
+                 Grid.ColumnSpan="3"
+            
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            Foreground="White" 
+            Width="50" 
+            Height="50" 
+            Style="{DynamicResource ButtoEntry}" Click="Button_Click_1" >
+            <Image Source="\Image\backpng.png"/>
+        </Button>
+        <Border
+            CornerRadius="20"
+            Background="#4C779E"
+            Grid.Column="1"
+            Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock 
+                    Foreground="White"
+                    FontSize="25"
+                    Grid.ColumnSpan="2"
+                    TextAlignment="Center"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    >Урок</TextBlock>
+                <TextBlock 
+                    Foreground="White"
+                    FontSize="15"
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    TextAlignment="Right"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    >Спецификация:</TextBlock>
+                <TextBlock 
+                    Foreground="White"
+                    FontSize="15"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    TextAlignment="Right"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    >Время урока:</TextBlock>
+                <TextBlock 
+                    Foreground="White"
+                    FontSize="15"
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    TextAlignment="Right"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    >Класс:</TextBlock>
+                <TextBlock 
+                    Foreground="White"
+                    FontSize="15"
+                    Grid.Column="0"
+                    Grid.Row="5"
+                    TextAlignment="Right"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    >Дата урока:</TextBlock>
+                
+                <TextBlock 
+                    Foreground="White"
+                    FontSize="15"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    TextAlignment="Right"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    >Группа:</TextBlock>
+                <TextBlock 
+                    Foreground="White"
+                    FontSize="15"
+                    Grid.Column="0"
+                    Grid.Row="6"
+                    TextAlignment="Right"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    >Учитель:</TextBlock>
+
+                <ComboBox Margin="2"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
+                    Grid.Column="1" Grid.Row="3"
+                    Width="100" Height="20" ></ComboBox>
+
+                <Button 
+                    Height="30"
+                    Width="100"
+                    Foreground="White"
+                    Content="Добавить"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="7"
+                    Style="{DynamicResource ButtoEntry}" >
+                </Button>
+                
+             
+                <WrapPanel  Grid.Column="1"
+                    Grid.Row="2" Margin="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Button Height="30"
+                    Width="50" 
+                    Foreground="White"
+                    Content="Add"
+                    Style="{DynamicResource ButtoEntry}">
+                    </Button>
+                    <TextBlock 
+                    Foreground="White"
+                    FontSize="12"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    TextAlignment="Right"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    >Specif</TextBlock>
+                </WrapPanel>
+                <WrapPanel  Grid.Column="1"
+                    Grid.Row="1" Margin="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Button Height="30"
+                    Width="50" 
+                    Foreground="White"
+                    Content="Add"
+                    Style="{DynamicResource ButtoEntry}">
+                    </Button>
+                    <TextBlock 
+                    Foreground="White"
+                    FontSize="12"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    TextAlignment="Right"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    >Group</TextBlock>
+                </WrapPanel>
+                <WrapPanel  Grid.Column="1"
+                    Grid.Row="4" Margin="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Button Height="30"
+                    Width="50" 
+                    Foreground="White"
+                    Content="Add"
+                    Style="{DynamicResource ButtoEntry}">
+                    </Button>
+                    <TextBlock 
+                    Foreground="White"
+                    FontSize="12"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    TextAlignment="Right"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    >Group</TextBlock>
+                </WrapPanel>
+                <WrapPanel  Grid.Column="1"
+                    Grid.Row="6" Margin="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Left">
+                    <Button Height="30"
+                    Width="50" 
+                    Foreground="White"
+                    Content="Add"
+                    Style="{DynamicResource ButtoEntry}">
+                    </Button>
+                    <TextBlock 
+                    Foreground="White"
+                    FontSize="12"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    TextAlignment="Right"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    >FIO</TextBlock>
+                </WrapPanel>
+                <DatePicker 
+                    Margin="2"
+                    VerticalAlignment="Center" HorizontalAlignment="Left"
+                    Grid.Column="1" Grid.Row="5"
+                    Width="100" Height="20"></DatePicker>
+            </Grid>
+
+
+        </Border>
     </Grid>
 </Page>
+

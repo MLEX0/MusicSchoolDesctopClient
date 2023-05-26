@@ -9,6 +9,85 @@
       Title="ProfilePage">
 
     <Grid>
-        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="Welcome" 
+                           FontFamily="Butler Bold"
+                           Margin="0 0 0 0" 
+                           FontSize="34" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="Добро пожаловать!" 
+                           Foreground="White"
+                           Grid.Column="0"
+                           Grid.ColumnSpan="3"
+                           Grid.Row="0"/>
+
+            <StackPanel Orientation="Vertical" 
+                        Margin="0 0 10 0" 
+                        VerticalAlignment="Center" 
+                        HorizontalAlignment="Center"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="3"
+                        Grid.Row="0"
+                        Grid.RowSpan="4">
+
+                <TextBlock  
+                           FontFamily="Butler Bold"
+                           Margin="0 0 0 0" 
+                           FontSize="25" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="Ваш профиль:" 
+                           Foreground="White"/>
+
+                <Ellipse   
+                    Width="240" 
+                    Height="240"
+                    
+                    Margin="0 30 0 0" 
+                    Stroke="White">
+
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="ProfileUserImage" 
+                                    Stretch="UniformToFill"
+                                    ImageSource="/Image/24052023-114508_711-Eugeneguth.jpg"/>
+                        
+                    </Ellipse.Fill>
+                </Ellipse>
+
+                <TextBlock x:Name="tbRole" 
+                           FontFamily="Butler Bold"
+                           Margin="0 0 0 0" 
+                           FontSize="15" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="Преподаватель" 
+                           Foreground="White"/>
+
+                <TextBlock x:Name="tbFIO" 
+                           FontFamily="Butler Bold"
+                           Margin="0 0 0 0" 
+                           FontSize="24" 
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="Павел Олегович Кудрявцев" 
+                           Foreground="White"/>
+
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>

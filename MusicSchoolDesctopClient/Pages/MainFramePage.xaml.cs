@@ -25,6 +25,8 @@ namespace MusicSchoolDesctopClient.Pages
         {
             InitializeComponent();
 
+            NavigationFrame.Content = new Pages.ProfilePage();
+            BtnBorderProfile.Visibility = Visibility.Visible;
             PageController.MainFrame = NavigationFrame;
         }
 

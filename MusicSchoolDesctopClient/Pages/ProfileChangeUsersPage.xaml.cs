@@ -1,5 +1,4 @@
-﻿using MusicSchoolDesctopClient.Class;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,18 +16,13 @@ using System.Windows.Shapes;
 namespace MusicSchoolDesctopClient.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AddEditUserPage.xaml
+    /// Логика взаимодействия для ProfileChangeUsersPage.xaml
     /// </summary>
-    public partial class AddEditUserPage : Page
+    public partial class ProfileChangeUsersPage : Page
     {
-        public AddEditUserPage()
+        public ProfileChangeUsersPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            PageController.MainFrame.Content = new Pages.ViewUsersPage();
         }
     }
 }
