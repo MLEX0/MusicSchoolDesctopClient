@@ -1,4 +1,5 @@
 ﻿using MusicSchoolDesctopClient.Class;
+using MusicSchoolDesctopClient.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,34 +23,44 @@ namespace MusicSchoolDesctopClient.Pages
     /// </summary>
     public partial class MarksViewPage : Page
     {
-        List<MusicMarks> users = new List<MusicMarks>();
-        public MarksViewPage()
+        List<StudentGrade> marks = new List<StudentGrade>();
+        private TeacherSchedule _thisLesson;
+        public MarksViewPage(TeacherSchedule lesson)
         {
             InitializeComponent();
-            users.Add(new MusicMarks() { FirstName = "Оксана", LastName = "Иванова", SurName = "awdaw", GroupNumber = "МУЗ-1 ", Grade = "5" });
-            users.Add(new MusicMarks() { FirstName = "Александор", LastName = "Орлов", SurName = "Сергеевич", GroupNumber = "МУЗ-1 ", Grade = "4" });
-            users.Add(new MusicMarks() { FirstName = "Илья", LastName = "Калашников", SurName = "", GroupNumber = "МУЗ-1 ", Grade = "3" });
-            lvMarksLessons.ItemsSource = users;
+
+            _thisLesson = lesson;
+
+            GetLessonMarks(lesson.IDLesson);
+        }
+
+        private async void GetLessonMarks(int lessonID)
+        {
+            marks = await AppData.Context.GetLessonMarksByID(lessonID);
+
+            lvMarksLessons.ItemsSource = marks;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PageController.MainFrame.Content = new Pages.AddEditMark();
 
-        }
-        public class MusicMarks
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public string SurName { get; set; }
-            public string GroupNumber { get; set; }
-
-            public string Grade { get; set; }
+            PageController.MainFrame.Content = new Pages.AddEditMark(_thisLesson, marks);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             PageController.MainFrame.Content = new Pages.MarksPage();
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is Grid grid)
+            {
+                if (grid.DataContext is StudentGrade editGrade)
+                {
+                    PageController.MainFrame.Content = new Pages.AddEditMark(_thisLesson, editGrade);
+                }
+            }
         }
     }
 }

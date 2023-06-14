@@ -194,7 +194,7 @@
                 </Button>
 
                 <Button Style="{StaticResource ButtoAnim}" 
-                        Visibility="Visible"  
+                        Visibility="Hidden"  
                         Height="100" 
                         x:Name="AdminButton" 
                         Click="ButtonAdmin_Click">

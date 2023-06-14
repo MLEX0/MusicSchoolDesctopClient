@@ -8,6 +8,11 @@
              d:DesignHeight="250" d:DesignWidth="400">
     <Border Margin="10 0 10 10"  CornerRadius="20">
         <Grid>
+            <Border Name="mainBorder"  CornerRadius="20"  Background="Gray" Opacity="0.2">
+
+
+            </Border>
+            <Border Height="20" VerticalAlignment="Top" />
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50*"/>
@@ -21,35 +26,40 @@
                 </Grid.RowDefinitions>
 
 
-                <StackPanel  Grid.ColumnSpan="2"  HorizontalAlignment="Right" Orientation="Horizontal" Grid.Column="1" >
+                <StackPanel  Grid.ColumnSpan="2"  
+                             HorizontalAlignment="Right" 
+                             Orientation="Horizontal" 
+                             Grid.Column="1" >
 
-                    <TextBlock FontSize="15" Name="startTime" >18:25</TextBlock>
+                    <TextBlock FontSize="15" 
+                               Name="startTime" 
+                               Foreground="White">18:25</TextBlock>
                 </StackPanel>
 
                 <StackPanel Grid.ColumnSpan="2" Margin="0 10 0 0" Grid.Row="1" Orientation="Horizontal">
 
-                    <TextBlock FontSize="15" Text="  " >Предмет:</TextBlock>
-                    <TextBlock FontSize="15" TextWrapping="Wrap" Name="subject" >2dgfdfgfgffg33333333333333333333fdgfdg5</TextBlock>
+                    <TextBlock FontSize="15" Text="" Foreground="White" >Предмет:</TextBlock>
+                    <TextBlock FontSize="15" TextWrapping="WrapWithOverflow" MaxWidth="250" Name="subject" Foreground="White" Margin="10 0 0 0" >2dgfdfgfgffg33333 333333333333333fdgfdg5</TextBlock>
                 </StackPanel>
 
 
                 <StackPanel  Grid.ColumnSpan="2" Margin="0 10 0 0" Grid.Row="2" Orientation="Horizontal">
 
-                    <TextBlock FontSize="15" Text="  " >Класс:</TextBlock>
-                    <TextBlock FontSize="15" Name="claaRoom" >25</TextBlock>
+                    <TextBlock FontSize="15" Text="" Foreground="White" >Этаж:</TextBlock>
+                    <TextBlock FontSize="15" Name="Floor" Foreground="White" Margin="10 0 0 0" >1</TextBlock>
                 </StackPanel>
 
                 <StackPanel  Grid.ColumnSpan="2" Margin="0 10 0 0" Grid.Row="3" Orientation="Horizontal">
 
-                    <TextBlock FontSize="15" Text="  " >Этаж:</TextBlock>
-                    <TextBlock FontSize="15" Name="Floor" >1</TextBlock>
+                    <TextBlock FontSize="15" Text="" Foreground="White" >Аудитория:</TextBlock>
+                    <TextBlock FontSize="15" Name="claaRoom" Foreground="White" Margin="10 0 0 0" >25</TextBlock>
                 </StackPanel>
 
 
-                <StackPanel  Grid.ColumnSpan="2"  Margin="0 10 0 0" Orientation="Horizontal">
+                <StackPanel  Grid.ColumnSpan="2"  Margin="0 20 0 0" Orientation="Horizontal">
 
-                    <TextBlock FontSize="15" Text="  " >Номер группы:</TextBlock>
-                    <TextBlock FontSize="15" Name="numGroup" >25</TextBlock>
+                    <TextBlock FontSize="15" Text="" Foreground="White" >Номер группы:</TextBlock>
+                    <TextBlock FontSize="15" Name="numGroup" Foreground="White" Margin="10 0 0 0" >25</TextBlock>
                 </StackPanel>
 
 
@@ -60,11 +70,7 @@
 
 
             </Grid>
-            <Border Name="mainBorder"  CornerRadius="20"  Background="Gray" Opacity="0.4">
-
-
-            </Border>
-            <Border Height="20" VerticalAlignment="Top" />
+            
         </Grid>
 
     </Border>

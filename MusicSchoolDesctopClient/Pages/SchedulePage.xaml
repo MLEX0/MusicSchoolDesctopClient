@@ -7,12 +7,12 @@
       mc:Ignorable="d" 
       d:DesignHeight="400" d:DesignWidth="800"
       Title="Расписание">
-    <Grid Margin="50">
+    <Grid Margin="30">
 
 
         <ScrollViewer Height="auto"
                       VerticalScrollBarVisibility="Auto"
-                      HorizontalScrollBarVisibility="Disabled">
+                      HorizontalScrollBarVisibility="Auto">
             <Grid Name="SheduleGrid" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
@@ -40,69 +40,69 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*" MinWidth="180" MaxWidth="400"/>
+                    <ColumnDefinition Width="1*" MinWidth="180" MaxWidth="400"/>
+                    <ColumnDefinition Width="1*" MinWidth="180" MaxWidth="400"/>
+                    <ColumnDefinition Width="1*" MinWidth="180" MaxWidth="400"/>
+                    <ColumnDefinition Width="1*" MinWidth="180" MaxWidth="400"/>
                 </Grid.ColumnDefinitions>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="1" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="2" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="3" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="4" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="5" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="6" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="7" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="8" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="9" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="10" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="11" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="12" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="13" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="14" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="15" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="16" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="17" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="18" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="19" Grid.ColumnSpan="6"/>
-                <Border Background="Black" VerticalAlignment="Bottom" Height="1" Grid.Row="20" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="1" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="2" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="3" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="4" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="5" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="6" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="7" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="8" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="9" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="10" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="11" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="12" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="13" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="14" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="15" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="16" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="17" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="18" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="19" Grid.ColumnSpan="6"/>
+                <Border Background="White" VerticalAlignment="Bottom" Height="1" Grid.Row="20" Grid.ColumnSpan="6"/>
 
 
-                <Border Background="Black" Width="1" HorizontalAlignment="Right"  Grid.RowSpan="20" Grid.Column="0"/>
-                <Border Background="Black" Width="1" HorizontalAlignment="Right"  Grid.RowSpan="20" Grid.Column="1"/>
-                <Border Background="Black" Width="1" HorizontalAlignment="Right"  Grid.RowSpan="20" Grid.Column="2"/>
-                <Border Background="Black" Width="1" HorizontalAlignment="Right"  Grid.RowSpan="20" Grid.Column="3"/>
-                <Border Background="Black" Width="1" HorizontalAlignment="Right"  Grid.RowSpan="20" Grid.Column="4"/>
+                <Border Background="White" Width="1" HorizontalAlignment="Right"  Grid.RowSpan="20" Grid.Column="0"/>
+                <Border Background="White" Width="1" HorizontalAlignment="Right"  Grid.RowSpan="20" Grid.Column="1"/>
+                <Border Background="White" Width="1" HorizontalAlignment="Right"  Grid.RowSpan="20" Grid.Column="2"/>
+                <Border Background="White" Width="1" HorizontalAlignment="Right"  Grid.RowSpan="20" Grid.Column="3"/>
+                <Border Background="White" Width="1" HorizontalAlignment="Right"  Grid.RowSpan="20" Grid.Column="4"/>
 
 
 
-                <TextBlock Grid.Row="0" Grid.Column="1" FontSize="20" HorizontalAlignment="Center">Понедельник</TextBlock>
-                <TextBlock Grid.Row="0" Grid.Column="2" FontSize="20" HorizontalAlignment="Center">Вторник</TextBlock>
-                <TextBlock Grid.Row="0" Grid.Column="3" FontSize="20" HorizontalAlignment="Center">Среда</TextBlock>
-                <TextBlock Grid.Row="0" Grid.Column="4" FontSize="20" HorizontalAlignment="Center">Четверг</TextBlock>
-                <TextBlock Grid.Row="0" Grid.Column="5" FontSize="20" HorizontalAlignment="Center">Пятница</TextBlock>
+                <TextBlock Grid.Row="0" Foreground="White"  Grid.Column="1" FontSize="20" HorizontalAlignment="Center">Понедельник</TextBlock>
+                <TextBlock Grid.Row="0" Foreground="White"  Grid.Column="2" FontSize="20" HorizontalAlignment="Center">Вторник</TextBlock>
+                <TextBlock Grid.Row="0" Foreground="White"  Grid.Column="3" FontSize="20" HorizontalAlignment="Center">Среда</TextBlock>
+                <TextBlock Grid.Row="0" Foreground="White"  Grid.Column="4" FontSize="20" HorizontalAlignment="Center">Четверг</TextBlock>
+                <TextBlock Grid.Row="0" Foreground="White"  Grid.Column="5" FontSize="20" HorizontalAlignment="Center">Пятница</TextBlock>
 
-                <TextBlock TextAlignment="Center" Grid.Row="1" MinHeight="60" Height="auto">9:00</TextBlock>
-                <TextBlock TextAlignment="Center" Grid.Row="2" MinHeight="60"   Height="auto">9:45</TextBlock>
-                <TextBlock TextAlignment="Center" Grid.Row="3" MinHeight="60"  Height="auto">10:30</TextBlock>
-                <TextBlock TextAlignment="Center"   Grid.Row="4" MinHeight="60" Height="auto">11:15</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="5" MinHeight="60"  Height="auto">12:00</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="6" MinHeight="60" Height="auto">12:45</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="7" MinHeight="60"  Height="auto">13:30</TextBlock>
-                <TextBlock TextAlignment="Center"   Grid.Row="8" MinHeight="60" Height="auto">13:15</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="9" MinHeight="60"  Height="auto">14:00</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="10" MinHeight="60"  Height="auto">14:45</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="11" MinHeight="60"  Height="auto">15:30</TextBlock>
-                <TextBlock TextAlignment="Center"   Grid.Row="12" MinHeight="60" Height="auto">16:15</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="13" MinHeight="60" Height="auto">17:00</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="14" MinHeight="60"  Height="auto">17:45</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="15" MinHeight="60" Height="auto">18:30</TextBlock>
-                <TextBlock TextAlignment="Center" Grid.Row="16"  MinHeight="60" Height="auto">19:15</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="17" MinHeight="60"  Height="auto">20:00</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="18" MinHeight="60"  Height="auto">20:45</TextBlock>
-                <TextBlock TextAlignment="Center"   Grid.Row="19" MinHeight="60" Height="auto">21:30</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="20" MinHeight="60" Height="auto">22:15</TextBlock>
-                <TextBlock TextAlignment="Center"  Grid.Row="21" MinHeight="60" Height="auto">23:00</TextBlock>
+                <TextBlock TextAlignment="Center"  Foreground="White" Grid.Row="1" MinHeight="60" Height="auto">9:00</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"  Grid.Row="2" MinHeight="60"   Height="auto">9:45</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"  Grid.Row="3" MinHeight="60"  Height="auto">10:30</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"    Grid.Row="4" MinHeight="60" Height="auto">11:15</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="5" MinHeight="60"  Height="auto">12:00</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="6" MinHeight="60" Height="auto">12:45</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="7" MinHeight="60"  Height="auto">13:30</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"    Grid.Row="8" MinHeight="60" Height="auto">13:15</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="9" MinHeight="60"  Height="auto">14:00</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="10" MinHeight="60"  Height="auto">14:45</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="11" MinHeight="60"  Height="auto">15:30</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"    Grid.Row="12" MinHeight="60" Height="auto">16:15</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="13" MinHeight="60" Height="auto">17:00</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="14" MinHeight="60"  Height="auto">17:45</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="15" MinHeight="60" Height="auto">18:30</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"  Grid.Row="16"  MinHeight="60" Height="auto">19:15</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="17" MinHeight="60"  Height="auto">20:00</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="18" MinHeight="60"  Height="auto">20:45</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"    Grid.Row="19" MinHeight="60" Height="auto">21:30</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="20" MinHeight="60" Height="auto">22:15</TextBlock>
+                <TextBlock TextAlignment="Center" Foreground="White"   Grid.Row="21" MinHeight="60" Height="auto">23:00</TextBlock>
 
             </Grid>
         </ScrollViewer>

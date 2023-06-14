@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MarksViewPage">
     <Page.Resources>
-        <Style x:Key="ButtoEntry" TargetType="Button">
+        <Style x:Key="ButtonEntry" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True"></Setter>
             <Setter Property="Foreground"  Value="#5A53A0"></Setter>
             <Setter Property="BorderBrush"  Value="#061828"></Setter>
@@ -63,11 +63,11 @@
                                 <BeginStoryboard>
                                     <Storyboard>
                                         <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" 
-                                                        To="#FF1F243E" 
+                                                        To="#061828" 
                                                         Duration="0:0:0.020"/>
 
                                         <ColorAnimation Storyboard.TargetProperty="Background.Color" 
-                                                        To="#FF131D54" 
+                                                        To="#62829E" 
                                                         Duration="0:0:0.020"/>
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -104,20 +104,23 @@
             Foreground="White" 
             Width="50" 
             Height="50" 
-            Style="{DynamicResource ButtoEntry}" Click="Button_Click_1" >
+            Style="{DynamicResource ButtonEntry}" Click="Button_Click_1" >
             <Image Source="\Image\backpng.png"/>
         </Button>
         <ListView x:Name="lvMarksLessons"
                   Background="{x:Null}"
                   Grid.Column="1"
                   Grid.Row="1"
-                  
+                  BorderThickness="0"
                   VerticalContentAlignment="Center"
                   d:ItemsSource="{d:SampleData ItemCount=5}" 
                   >
             <ListView.ItemTemplate>
             <DataTemplate>
-                <Grid Height="150" Width="700" HorizontalAlignment="Center">
+                <Grid Height="150" 
+                      Width="700" 
+                      HorizontalAlignment="Center"
+                      MouseDown="Grid_MouseDown">
                     <Border 
                     Background="#13293D"  
                     CornerRadius="10"
@@ -135,12 +138,14 @@
 
                                 <WrapPanel 
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Left">
+                                   HorizontalAlignment="Left"
+                                    Grid.ColumnSpan="2"
+>
                            <TextBlock Grid.Row="0" 
                            Grid.ColumnSpan="2"
                            Text="{Binding LastName}"
                            Foreground="White"
-                           FontSize="15" 
+                           FontSize="30" 
                            FontWeight="Bold" 
                           
                            Margin="2" />
@@ -148,15 +153,15 @@
                            Grid.ColumnSpan="2"
                            Text="{Binding FirstName}"
                            Foreground="White"
-                           FontSize="15" 
+                           FontSize="30" 
                            FontWeight="Bold" 
                           
                            Margin="2" />
                                     <TextBlock Grid.Row="0" 
                            Grid.ColumnSpan="2"
-                           Text="{Binding SurName}"
+                           Text="{Binding Patronymic}"
                            Foreground="White"
-                           FontSize="15" 
+                           FontSize="30" 
                            FontWeight="Bold" 
                           
                            Margin="2" />
@@ -166,7 +171,7 @@
                             <TextBlock Grid.Row="1" 
                            Foreground="White"
                            Text="{Binding GroupNumber}" 
-                           FontSize="30" 
+                           FontSize="20" 
                            FontWeight="Bold" 
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"
@@ -174,14 +179,14 @@
 
                             <TextBlock Grid.Column="1" 
                                Grid.Row="0"
-                           Text="{Binding Grade}"
+                           Text="{Binding IDGrade}"
                                        Grid.RowSpan="2"
-                           FontSize="30" 
+                           FontSize="40" 
                            FontWeight="Bold" 
                            Foreground="White"
                            VerticalAlignment="Center"
-                           HorizontalAlignment="Center"
-                           Margin="2" />
+                           HorizontalAlignment="Right"
+                           Margin="5 5 30 5" />
                         </Grid>
                     </Border>
                 </Grid>
@@ -195,7 +200,7 @@
             Foreground="White" 
             Width="50" 
             Height="50" 
-            Style="{DynamicResource ButtoEntry}" Click="Button_Click" >
+            Style="{DynamicResource ButtonEntry}" Click="Button_Click" >
             ADD     
         </Button>
        

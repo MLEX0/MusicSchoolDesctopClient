@@ -8,66 +8,75 @@
       d:DesignHeight="550" d:DesignWidth="1000"
       Title="Страница Оценок">
     <Page.Resources>
-        <Style x:Key="ButtoEntry" TargetType="Button">
-        <Setter Property="OverridesDefaultStyle" Value="True"></Setter>
-        <Setter Property="Foreground"  Value="#5A53A0"></Setter>
-        <Setter Property="BorderBrush"  Value="#061828"></Setter>
-        <Setter Property="Background" Value="#62829E"></Setter>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
+        <Style x:Key="ButtonEntry" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"></Setter>
+            <Setter Property="Foreground"  Value="#5A53A0"></Setter>
+            <Setter Property="BorderBrush"  Value="#061828"></Setter>
+            <Setter Property="Background" Value="#62829E"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                                BorderThickness="5"
+                                BorderBrush="#061828" 
+                                CornerRadius="10" 
+                                Background="{TemplateBinding Background}">
+
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
 
                         <ControlTemplate.Triggers>
-                        <EventTrigger RoutedEvent="PreviewMouseDown">
-                            <BeginStoryboard>
-                                <Storyboard>
+                            <EventTrigger RoutedEvent="PreviewMouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard>
 
-                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
                                                         To="#FF080B4B" 
                                                         Duration="0:0:0.020"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
 
-                        <EventTrigger RoutedEvent="PreviewMouseUp">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                            <EventTrigger RoutedEvent="PreviewMouseUp">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
                                                         To="#FF080B1B" 
                                                         Duration="0:0:0.020"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="MouseEnter">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" 
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" 
                                                         To="#FF1F246E" 
                                                         Duration="0:0:0.020"/>
-                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
                                                         To="#FF080B3B" 
                                                         Duration="0:0:0.020"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="MouseLeave">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" 
-                                                        To="#FF1F243E" 
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color" 
+                                                        To="#061828" 
                                                         Duration="0:0:0.020"/>
 
-                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" 
-                                                        To="#FF131D54" 
+                                        <ColorAnimation Storyboard.TargetProperty="Background.Color" 
+                                                        To="#62829E" 
                                                         Duration="0:0:0.020"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
     <Grid>
 
@@ -93,15 +102,16 @@
         <ListView 
              x:Name="lvGroupLessons"
                   Background="#7899D4"
+                  BorderThickness="0"
                   Grid.Column="1"
                   Grid.Row="1"
                   MouseDoubleClick="lvGroupLessons_MouseDoubleClick"
                   VerticalContentAlignment="Center"
                   d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="lvGroupLessons_SelectionChanged" 
                   >
-            <ListView.ItemTemplate >
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Height="150" Width="700" HorizontalAlignment="Center">
+                    <Grid Height="150" Width="700" HorizontalAlignment="Center" MouseDown="Grid_MouseDown">
                         <Border 
                     Background="#13293D"  
                     CornerRadius="10"
@@ -113,7 +123,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
 
@@ -122,28 +132,29 @@
                                Grid.ColumnSpan="2"
                            Text="{Binding SubjectName}"
                            Foreground="White"
-                           FontSize="35" 
+                           FontSize="30"
+                           TextWrapping="WrapWithOverflow"
                            FontWeight="Bold" 
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"
-                           Margin="5" />
+                           Margin="5 10 0 0" />
 
                                 <TextBlock Grid.Row="1" 
                            Foreground="White"
                            Text="{Binding GroupNumber}" 
                            FontSize="30" 
                            FontWeight="Bold" 
-                           VerticalAlignment="Center"
+                           VerticalAlignment="Bottom"
                            HorizontalAlignment="Left"
                            Margin="5" />
 
                                 <TextBlock Grid.Column="1" 
                                Grid.Row="1"
-                           Text="{Binding LessonDate}" 
+                           Text="{Binding StringDate}" 
                            FontSize="30" 
                            FontWeight="Bold" 
                            Foreground="White"
-                           VerticalAlignment="Center"
+                           VerticalAlignment="Bottom"
                            HorizontalAlignment="Center"
                            Margin="2" />
                             </Grid>

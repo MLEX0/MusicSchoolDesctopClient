@@ -1,6 +1,9 @@
-﻿using System;
+﻿using MusicSchoolDesctopClient.Class;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +26,28 @@ namespace MusicSchoolDesctopClient.Pages
         public ProfilePage()
         {
             InitializeComponent();
+
+            if (TempData.TeacherUser != null) 
+            {
+                tbFIO.Text = $"{TempData.TeacherUser.FirstName} {TempData.TeacherUser.LastName} {TempData.TeacherUser.Patronymic}";
+                tbRole.Text = "Преподаватель";
+
+                if (!string.IsNullOrEmpty(TempData.UserImage))
+                {
+                    byte[] image = AppData.Context.GetImage(TempData.UserImage);
+                    //загрузка изображения в приложение
+                    BitmapImage biImg = new BitmapImage();
+                    MemoryStream ms = new MemoryStream(image);
+                    biImg.BeginInit();
+                    biImg.StreamSource = ms;
+                    biImg.EndInit();
+
+                    ImageSource imgSrc = biImg as ImageSource;
+
+                    ProfileUserImage.ImageSource = imgSrc;
+                }
+            }
+            
         }
     }
 }

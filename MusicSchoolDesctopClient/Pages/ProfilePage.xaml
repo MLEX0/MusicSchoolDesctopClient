@@ -64,7 +64,7 @@
                     <Ellipse.Fill>
                         <ImageBrush x:Name="ProfileUserImage" 
                                     Stretch="UniformToFill"
-                                    ImageSource="/Image/24052023-114508_711-Eugeneguth.jpg"/>
+                                    ImageSource="/Image/navigation_profile_icon.png"/>
                         
                     </Ellipse.Fill>
                 </Ellipse>
@@ -75,7 +75,7 @@
                            FontSize="15" 
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
-                           Text="Преподаватель" 
+                           Text="роль" 
                            Foreground="White"/>
 
                 <TextBlock x:Name="tbFIO" 
@@ -84,7 +84,7 @@
                            FontSize="24" 
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
-                           Text="Павел Олегович Кудрявцев" 
+                           Text="Имя Отчество Фамилия" 
                            Foreground="White"/>
 
             </StackPanel>
