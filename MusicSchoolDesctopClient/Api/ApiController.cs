@@ -18,7 +18,7 @@ namespace MusicSchoolDesctopClient.Api
         public async Task RunAsync()
         {
             // Update port # in the following line.
-            client.BaseAddress = new Uri("http://localhost:80/api/");
+            client.BaseAddress = new Uri("https://faypeyletag.beget.app/api/");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
